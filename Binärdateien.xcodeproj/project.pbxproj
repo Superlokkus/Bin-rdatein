@@ -28,6 +28,11 @@
 		281993C718631ADD00C885D3 /* Binärdateien */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Binärdateien"; sourceTree = BUILT_PRODUCTS_DIR; };
 		281993CA18631ADD00C885D3 /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
 		281993CC18631ADD00C885D3 /* Bina_rdateien.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = Bina_rdateien.1; sourceTree = "<group>"; };
+		281993D318631D4900C885D3 /* mat.dat */ = {isa = PBXFileReference; lastKnownFileType = file; path = mat.dat; sourceTree = "<group>"; };
+		281993D418631D4900C885D3 /* mat.dat.intel */ = {isa = PBXFileReference; lastKnownFileType = file; path = mat.dat.intel; sourceTree = "<group>"; };
+		281993D518631D4900C885D3 /* mat.dat.intel64 */ = {isa = PBXFileReference; lastKnownFileType = file; path = mat.dat.intel64; sourceTree = "<group>"; };
+		281993D618631D4900C885D3 /* mat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mat.h; sourceTree = "<group>"; };
+		281993D718631D4900C885D3 /* mat64Bit.dat */ = {isa = PBXFileReference; lastKnownFileType = file; path = mat64Bit.dat; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +66,11 @@
 			isa = PBXGroup;
 			children = (
 				281993CA18631ADD00C885D3 /* main.c */,
+				281993D318631D4900C885D3 /* mat.dat */,
+				281993D418631D4900C885D3 /* mat.dat.intel */,
+				281993D518631D4900C885D3 /* mat.dat.intel64 */,
+				281993D618631D4900C885D3 /* mat.h */,
+				281993D718631D4900C885D3 /* mat64Bit.dat */,
 				281993CC18631ADD00C885D3 /* Bina_rdateien.1 */,
 			);
 			path = "Binärdateien";
