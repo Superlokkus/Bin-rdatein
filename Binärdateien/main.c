@@ -7,12 +7,32 @@
 //
 
 #include <stdio.h>
+#include "mat.h"
+#include <errno.h>
+#include <stdlib.h>
+#include <string.h>
 
 int main(int argc, const char * argv[])
 {
+    if (argc != 2) {
+        fprintf(stderr, "Usage %s <Filename>", argv[0]);
+        return EXIT_FAILURE;
+    }
 
-    // insert code here...
-    printf("Hello, World!\n");
+#if DEBUG
+    printf("Parameter: %s\n",argv[1]);
+#endif
+    
+    FILE *file;
+    
+    if ( (file = fopen(argv[1], "r")) == NULL)
+        {
+            printf("%s\n",strerror(errno));
+            return EXIT_FAILURE;
+        }
+    
+    
+    
     return 0;
 }
 

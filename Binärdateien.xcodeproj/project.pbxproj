@@ -33,6 +33,7 @@
 		281993D518631D4900C885D3 /* mat.dat.intel64 */ = {isa = PBXFileReference; lastKnownFileType = file; path = mat.dat.intel64; sourceTree = "<group>"; };
 		281993D618631D4900C885D3 /* mat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mat.h; sourceTree = "<group>"; };
 		281993D718631D4900C885D3 /* mat64Bit.dat */ = {isa = PBXFileReference; lastKnownFileType = file; path = mat64Bit.dat; sourceTree = "<group>"; };
+		281993D81863213300C885D3 /* praktC10.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = praktC10.html; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +67,7 @@
 			isa = PBXGroup;
 			children = (
 				281993CA18631ADD00C885D3 /* main.c */,
+				281993D81863213300C885D3 /* praktC10.html */,
 				281993D318631D4900C885D3 /* mat.dat */,
 				281993D418631D4900C885D3 /* mat.dat.intel */,
 				281993D518631D4900C885D3 /* mat.dat.intel64 */,
@@ -235,6 +237,7 @@
 				281993D218631ADD00C885D3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

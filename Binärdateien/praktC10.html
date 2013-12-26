@@ -1,0 +1,87 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<!-- T-->
+  <title>Praktikum Programmiersprachen C - Bin&auml;rdateien</title>
+</head>
+<body>
+<h3>Praktikum Programmiersprache C  - Bin&auml;rdateien
+</h3>
+<hr>
+
+Daten
+k&ouml;nnen in unterschiedlichster Form in Dateien gespeichert werden.
+Eine sehr einfache Form ist, die Daten, wie sie in Strukturen im
+Speicher stehen, direkt in eine Datei zu schreiben. Dies ist unter
+Aspekten der Portabilit&auml;t sehr unkomfortabel. Auch d&uuml;rfen die
+Strukturen in diesem Fall keine Pointer enthalten, da diese Adressen
+f&uuml;r die Speicherung wertlos sind. In der Regel wird man zwischen
+einer internen und einer externen Datenrepr&auml;sentation
+unterscheiden. Dennoch soll sich dieses Praktikum solchen
+Bin&auml;rdateien widmen, deren gleichlange Datens&auml;tze
+Strukturinhalte der Struktur tArt (Materialartikel) enthalten.<br>
+
+Im
+Downloadbereich stehen die Dateien mat.dat bzw. mat.dat.intel zum
+Download zur Verf&uuml;gung. Es sind Bin&auml;rdateien, die Strukturen,
+wie sie in mat.h beschrieben sind, enthalten. Auf intelbasierten PCs
+und kompatiblen ist mat.dat.intel, bzw. die 64-bit-Version zu
+w&auml;hlen, auf IBM-workstation, wie iaix? ist mat.dat zu nutzen.
+Beide Dateien enthalten die selben Daten, aber in
+plattformabh&auml;nger Form, deshalb die Unterscheidung.<br>
+
+Kontrollfrage:
+worin unterscheiden sich die einzelnen Dateien?<br>
+
+<br>
+Schreiben Sie ein C-Programm, das die Datei&nbsp; <span
+ style="font-family: courier new,courier,monospace; font-weight: bold;">mat.dat&nbsp;</span>
+als
+Bin&auml;rfile einliest, die Artikel
+sortiert und als Inventurliste mit folgendem Zeilenaufbau ausgibt. Der
+Speicherplatz, in dem die Artikel abgelegt werden, soll mit malloc auf
+dem heap ausgefasst werden. &Uuml;berpr&uuml;fen Sie den Erfolg der
+Operation.<br>
+
+<pre>Art.-Nr      Bezeichnung              Stueckzahl   Soll   Unterschrift<br>nnnnnnnnnnnn nnnnnnnnnnnnnnnnnnnnnnnn nnnnnnnnn ......... ...............<br></pre>
+Der Aufbau
+der Datens&auml;tze ist aus dem Headerfile mat.h, das Sie
+mit<span style="font-family: courier new,courier,monospace;"> 
+#include"mat.h"
+</span> in Ihr Programm einbinden k&ouml;nnen, ersichtlich.
+
+Die Dateien
+mat.dat und mat.h befinden sich unter<br>
+
+<dl>
+  <a href="../DownloadPraktikum/Binaerdatei">mat.h, mat.dat, mat.dat.intel, mat.dat.intel64</a>
+  
+</dl>
+Der Name
+der Materialdatei soll als<span style="text-decoration: underline;">
+Kommandozeilenparameter</span> an das
+Programm &uuml;bergeben
+werden. &Uuml;berpr&uuml;fen Sie an Hand von argc, ob die Parameter
+korrekt eingegeben wurden.<br>
+
+Die Ermittlung
+der L&auml;nge der Datei ist mit der Befehlsfolge
+</p>
+<pre>   fseek(pFile,0,SEEK_END);<br>   len=ftell(pFile);<br>   fseek(pFile,0,SEEK_SET);<br
+ style="font-family: helvetica,arial,sans-serif;"></pre>
+m&ouml;glich.<br>
+<br>
+Zum Einlesen einer gegebenen Anzahl von Bytes verwendet man die Funktion
+fread.<br>
+<br>
+Zusatzaufgaben:<br>
+- Richten Sie einen Vektor von Pointern ein und sortieren Sie die
+Pointer.<br>
+- Geben Sie &uuml;ber einen Kommandozeilenparameter an, ob nach
+Bezeichnung oder nach Artikelnummer sortiert werden soll.<br>
+<br>
+
+<hr><h4><a href="../index.html">A. Beck</a></h4><br>
+<br>
+</body>
+</html>
