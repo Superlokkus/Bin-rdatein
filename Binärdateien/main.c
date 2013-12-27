@@ -20,7 +20,7 @@ int main(int argc, const char * argv[])
     }
 
 #if DEBUG
-    printf("Parameter: %s\n",argv[1]);
+    printf("Argument 1: %s\n",argv[1]);
 #endif
     
     FILE *file;
@@ -32,19 +32,32 @@ int main(int argc, const char * argv[])
         }
     
 
-    tArt tArtFoo;
+    //Get the filelenght
+    fseek(file, 0, SEEK_END);
+    unsigned long filelenght = ftell(file);
+    fseek(file, 0L, SEEK_SET);
+#if DEBUG
+    printf("Count of objects: %ld\n",filelenght/sizeof(tArt));
+#endif
     
-    fread(&tArtFoo,sizeof tArtFoo,1, file);
+    tArt *tArtList = malloc(filelenght);
     
-    printf("Foo\n");
+    int i = 0;
     
+    while (fread(&tArtList[i],sizeof(tArt),1, file)) {
+        i++;
+    }
+    
+    
+    
+    
+   
     if (fclose(file)) //I wonder if that ever happens
     {
         fprintf(stderr, "%s\n",strerror(errno));
         return EXIT_FAILURE;
     }
-    
-    
+    free(tArtList);
     return 0;
 }
 
