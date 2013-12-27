@@ -42,11 +42,7 @@ int main(int argc, const char * argv[])
     
     tArt *tArtList = malloc(filelenght);
     
-    int i = 0;
-    
-    while (fread(&tArtList[i],sizeof(tArt),1, file)) {
-        i++;
-    }
+    fread(tArtList,sizeof(tArt),filelenght/sizeof(tArt), file);
     
     
     
