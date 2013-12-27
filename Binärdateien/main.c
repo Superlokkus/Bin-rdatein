@@ -27,10 +27,15 @@ int main(int argc, const char * argv[])
     
     if ( (file = fopen(argv[1], "r")) == NULL)
         {
-            printf("%s\n",strerror(errno));
+            fprintf(stderr,"%s\n",strerror(errno));
             return EXIT_FAILURE;
         }
     
+    if (fclose(file)) //I wonder if that ever happens
+    {
+        fprintf(stderr, "%s\n",strerror(errno));
+        return EXIT_FAILURE;
+    }
     
     
     return 0;
