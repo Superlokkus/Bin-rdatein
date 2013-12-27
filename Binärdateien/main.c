@@ -40,9 +40,16 @@ int main(int argc, const char * argv[])
     printf("Count of objects: %ld\n",filelenght/sizeof(tArt));
 #endif
     
-    tArt *tArtList = malloc(filelenght);
+    tArt *tArtList[26];//Very Bad thing, todo: get memory runtime
+
+    int i;
     
-    fread(tArtList,sizeof(tArt),filelenght/sizeof(tArt), file);
+    for (i=0;i <= (filelenght/sizeof(tArt));i++) {
+        tArt tmp;
+        fread(&tmp,sizeof(tArt),1, file);
+        tArtList[i] = &tmp;//How do I get n new tArts for my array?
+    }
+    
     
     
     
@@ -53,7 +60,7 @@ int main(int argc, const char * argv[])
         fprintf(stderr, "%s\n",strerror(errno));
         return EXIT_FAILURE;
     }
-    free(tArtList);
+    //free(tArtList);
     return 0;
 }
 
