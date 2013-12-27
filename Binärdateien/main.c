@@ -31,6 +31,13 @@ int main(int argc, const char * argv[])
             return EXIT_FAILURE;
         }
     
+
+    tArt tArtFoo;
+    
+    fread(&tArtFoo,sizeof tArtFoo,1, file);
+    
+    printf("Foo\n");
+    
     if (fclose(file)) //I wonder if that ever happens
     {
         fprintf(stderr, "%s\n",strerror(errno));

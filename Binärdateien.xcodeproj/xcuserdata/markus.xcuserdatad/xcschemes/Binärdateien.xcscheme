@@ -59,7 +59,7 @@
       </BuildableProductRunnable>
       <CommandLineArguments>
          <CommandLineArgument
-            argument = "$(PROJECT_DIR)/Bina&#776;rdateien/mat.dat.intel"
+            argument = "$(PROJECT_DIR)/Bina&#776;rdateien/mat.dat.intel64"
             isEnabled = "YES">
          </CommandLineArgument>
       </CommandLineArguments>
