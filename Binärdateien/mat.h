@@ -5,3 +5,5 @@ typedef struct
   long Lbst;
 }tArt;
 
+void tArtPrint(const tArt *toprint);
+

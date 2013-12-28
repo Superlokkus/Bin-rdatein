@@ -42,16 +42,19 @@ int main(int argc, const char * argv[])
     
     tArt *tArtList = malloc(filelenght);
 
-    int i;
+    unsigned long i;
+    unsigned long tArtCount = filelenght/sizeof(tArt);
     
-    for (i=0;i <= (filelenght/sizeof(tArt));i++) {
+    for (i=0;i <= tArtCount;i++) {
         tArt tmp;
         fread(&tmp,sizeof(tArt),1, file);
-        *(tArtList+i) = tmp; 
+        tArtList[i] = tmp;
     }
     
-    
-    
+    printf("Art.-Nr      Bezeichnung              Stueckzahl   Soll   Unterschrift\n");
+    for (i=0; i<= tArtCount; i++) {
+        tArtPrint(&tArtList[i]);
+    }
     
     
    
