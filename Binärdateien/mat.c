@@ -11,6 +11,12 @@
 
 void tArtPrint(const tArt *toprint)
 {
+    if (toprint->vBez[0] == 0  && toprint->vNr[0] == 0 && toprint->Lbst == 0)
+    {
+        printf("--------\n");
+        return;
+    }
+    
     printf("%s %s %ld\n",toprint->vBez,toprint->vNr,toprint->Lbst);
     return;
 }

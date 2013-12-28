@@ -46,15 +46,11 @@ int main(int argc, const char * argv[])
         return EXIT_FAILURE;
     }
 
-    unsigned long i;
     unsigned long tArtCount = filelenght/sizeof(tArt);
     
-    for (i=0;i <= tArtCount;i++) {
-        tArt tmp;
-        fread(&tmp,sizeof(tArt),1, file);
-        tArtList[i] = tmp;
-    }
+    fread(tArtList,sizeof(tArt),tArtCount, file);
     
+    unsigned long i;
     printf("Art.-Nr      Bezeichnung              Stueckzahl   Soll   Unterschrift\n");
     for (i=0; i<= tArtCount; i++) {
         tArtPrint(&tArtList[i]);
