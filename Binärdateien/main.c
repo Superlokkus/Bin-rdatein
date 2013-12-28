@@ -41,6 +41,10 @@ int main(int argc, const char * argv[])
 #endif
     
     tArt *tArtList = malloc(filelenght);
+    if (tArtList == NULL) {
+        fprintf(stderr, "%s\n",strerror(errno));
+        return EXIT_FAILURE;
+    }
 
     unsigned long i;
     unsigned long tArtCount = filelenght/sizeof(tArt);
