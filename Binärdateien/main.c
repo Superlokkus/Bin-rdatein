@@ -40,14 +40,14 @@ int main(int argc, const char * argv[])
     printf("Count of objects: %ld\n",filelenght/sizeof(tArt));
 #endif
     
-    tArt *tArtList[26];//Very Bad thing, todo: get memory runtime
+    tArt tArtList[27];//Very Bad thing, todo: get memory runtime
 
     int i;
     
     for (i=0;i <= (filelenght/sizeof(tArt));i++) {
         tArt tmp;
         fread(&tmp,sizeof(tArt),1, file);
-        tArtList[i] = &tmp;//How do I get n new tArts for my array?
+        tArtList[i] = tmp;//How do I get n new tArts for my array?
     }
     
     
