@@ -47,9 +47,12 @@ int main(int argc, const char * argv[])
     }
 
     unsigned long tArtCount = filelenght/sizeof(tArt);
-    
     fread(tArtList,sizeof(tArt),tArtCount, file);
     
+    
+    sorttArtBez(tArtList, tArtCount);
+    
+    //Output
     unsigned long i;
     printf("Art.-Nr      Bezeichnung              Stueckzahl   Soll   Unterschrift\n");
     for (i=0; i<= tArtCount; i++) {
@@ -57,7 +60,7 @@ int main(int argc, const char * argv[])
     }
     
     
-   
+    //Cleanup
     if (fclose(file)) //I wonder if that ever happens
     {
         fprintf(stderr, "%s\n",strerror(errno));

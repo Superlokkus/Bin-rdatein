@@ -70,11 +70,11 @@
 			children = (
 				281993CA18631ADD00C885D3 /* main.c */,
 				2819C61B186EE7FF00364B67 /* mat.c */,
+				281993D618631D4900C885D3 /* mat.h */,
 				281993D81863213300C885D3 /* praktC10.html */,
 				281993D318631D4900C885D3 /* mat.dat */,
 				281993D418631D4900C885D3 /* mat.dat.intel */,
 				281993D518631D4900C885D3 /* mat.dat.intel64 */,
-				281993D618631D4900C885D3 /* mat.h */,
 				281993D718631D4900C885D3 /* mat64Bit.dat */,
 				281993CC18631ADD00C885D3 /* Bina_rdateien.1 */,
 			);
