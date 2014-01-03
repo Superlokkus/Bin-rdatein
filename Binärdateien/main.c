@@ -23,6 +23,7 @@ int main(int argc, const char * argv[])
     printf("Argument 1: %s\n",argv[1]);
 #endif
     
+    //Creating tArtList
     FILE *file;
     
     if ( (file = fopen(argv[1], "r")) == NULL)
@@ -48,7 +49,7 @@ int main(int argc, const char * argv[])
 
     unsigned long tArtCount = filelenght/sizeof(tArt);
     fread(tArtList,sizeof(tArt),tArtCount, file);
-    
+    //tArtList ready for use
     
     sorttArtBez(tArtList, tArtCount);
     
