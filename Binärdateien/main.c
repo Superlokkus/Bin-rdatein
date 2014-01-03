@@ -11,22 +11,48 @@
 #include <errno.h>
 #include <stdlib.h>
 #include <string.h>
+#include <unistd.h>
 
 int main(int argc, const char * argv[])
 {
-    if (argc != 2) {
-        fprintf(stderr, "Usage %s <Filename>", argv[0]);
-        return EXIT_FAILURE;
-    }
-
+    //Handling flags/options
+    int filenamepos = 1;
+    int option;
+    enum sortcrit {
+        none = 0,
+        vBez = 1,
+        vNr = 2
+    };
+    int sortcrit = none;
+    while ((option = getopt(argc, argv, "hba")) != -1) {
 #if DEBUG
-    printf("Argument 1: %s\n",argv[1]);
+        printf("%d\n",optind);
 #endif
+        switch (option) {
+            case 'h':
+                printf("%s [-h[-b|-a]] filename\n \n ", argv[0]);
+                printf("Commands:\n -b Sort by Bezeichner \n -a Sort by Artnummer \n");
+                return EXIT_SUCCESS;
+                break;
+            case 'b':
+                sortcrit = vBez;
+                break;
+            case 'a':
+                sortcrit = vNr;
+                break;
+            default:
+                fprintf(stderr, "Usage: %s [-h[-b|-a]] filename\n Type %s -h for help\n ", argv[0],argv[0]);
+                return EXIT_FAILURE;
+                break;
+        }
+    }
+    filenamepos = optind; //Filename is at the moment always last option, but maybe filename handling will be changed
+    
     
     //Creating tArtList
     FILE *file;
     
-    if ( (file = fopen(argv[1], "r")) == NULL)
+    if ( (file = fopen(argv[filenamepos], "r")) == NULL)
         {
             fprintf(stderr,"%s\n",strerror(errno));
             return EXIT_FAILURE;
@@ -51,7 +77,21 @@ int main(int argc, const char * argv[])
     fread(tArtList,sizeof(tArt),tArtCount, file);
     //tArtList ready for use
     
-    sorttArtBez(tArtList, tArtCount);
+    
+    //Sorting takes place
+    if (sortcrit) {
+        switch (sortcrit) {
+            case vBez:
+                sorttArtBez(tArtList, tArtCount);
+                break;
+            case vNr:
+                //Todo
+                break;
+            
+            default:
+                break;
+        }
+    }
     
     //Output
     unsigned long i;
@@ -68,6 +108,6 @@ int main(int argc, const char * argv[])
         return EXIT_FAILURE;
     }
     free(tArtList);
-    return 0;
+    return EXIT_SUCCESS;
 }
 
