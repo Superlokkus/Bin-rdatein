@@ -9,6 +9,7 @@ typedef struct
 void tArtPrint(const tArt *toprint);
 
 void sorttArtBez(tArt *tosort, unsigned long count);
+void sorttArtvNr(tArt *tosort, unsigned long count);
 
 void swaptArt(tArt *n1,tArt *n2);
 

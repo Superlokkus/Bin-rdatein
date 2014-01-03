@@ -54,3 +54,17 @@ void sorttArtBez(tArt tosort[], unsigned long count)
         
     }
 }
+void sorttArtvNr(tArt tosort[], unsigned long count)
+{
+    unsigned long i;
+    for (i=0; i<count; i++) {
+        unsigned long j;
+        for (j = i+1; j<count; j++) {
+            
+            if (strcmp(tosort[i].vNr,tosort[j].vNr) > 0) {
+                swaptArt(&tosort[i],&tosort[j]);
+            }
+        }
+        
+    }
+}

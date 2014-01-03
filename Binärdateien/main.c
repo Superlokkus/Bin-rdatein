@@ -85,7 +85,7 @@ int main(int argc, const char * argv[])
                 sorttArtBez(tArtList, tArtCount);
                 break;
             case vNr:
-                //Todo
+                sorttArtvNr(tArtList, tArtCount);
                 break;
             
             default:
